@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа № 3 — Доска публикаций</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Доска публикаций</h1>
+
+        <!-- Сообщения (загрузка / успех / ошибка) -->
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        <!-- Загрузка публикаций -->
+        <section class="card">
+            <button id="load-btn" type="button" class="btn btn-primary">
+                Загрузить публикации
+            </button>
+        </section>
+
+        <!-- Список публикаций -->
+        <section class="card">
+            <h2>Публикации</h2>
+            <div id="posts" class="posts"></div>
+        </section>
+
+        <!-- Форма создания -->
+        <section class="card">
+            <h2>Новая публикация</h2>
+            <form id="create-form" novalidate>
+                <div class="field">
+                    <label for="title">Заголовок</label>
+                    <input type="text" id="title" name="title" autocomplete="off">
+                </div>
+                <div class="field">
+                    <label for="body">Текст</label>
+                    <textarea id="body" name="body" rows="4"></textarea>
+                </div>
+                <button id="create-btn" type="submit" class="btn btn-primary">
+                    Создать публикацию
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
