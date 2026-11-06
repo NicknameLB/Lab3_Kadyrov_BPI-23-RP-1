@@ -44,7 +44,7 @@ function renderPost(post) {
 
     const title = document.createElement('div');
     title.className = 'post-title';
-    title.textContent = post.title;          // безопасный вывод
+    title.textContent = post.title;
 
     const body = document.createElement('div');
     body.className = 'post-body';
@@ -59,7 +59,7 @@ function renderPost(post) {
 }
 
 /* ============================================================
-   GET: загрузка публикаций
+   GET
    ============================================================ */
 
 async function loadPosts() {
@@ -86,7 +86,7 @@ async function loadPosts() {
 }
 
 /* ============================================================
-   POST: создание публикации
+   POST
    ============================================================ */
 
 function validateCreate() {
