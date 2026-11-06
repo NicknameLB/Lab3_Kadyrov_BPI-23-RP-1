@@ -1,8 +1,6 @@
 'use strict';
 
-/* ============================================================
-   Константы и DOM-элементы
-   ============================================================ */
+//Конст и DOM
 
 const GET_URL  = 'https://jsonplaceholder.typicode.com/posts?_limit=5';
 const POST_URL = 'https://jsonplaceholder.typicode.com/posts';
@@ -15,15 +13,9 @@ const bodyInput  = document.querySelector('#body');
 const postsEl    = document.querySelector('#posts');
 const messageEl  = document.querySelector('#message');
 
-/* ============================================================
-   Утилиты
-   ============================================================ */
+//Утилиты
 
-/**
- * Показать сообщение в области #message.
- * @param {string} text
- * @param {'info'|'success'|'error'} type
- */
+//Показать сообщение в области #message.
 function setMessage(text, type = 'info') {
     messageEl.textContent = text;
     messageEl.className = `message ${type}`;
@@ -34,10 +26,7 @@ function clearMessage() {
     messageEl.className = 'message';
 }
 
-/**
- * Отрисовка одной публикации в контейнере.
- * @param {{ id: number, title: string, body: string }} post
- */
+//Отрисовка одной публикации в контейнере.
 function renderPost(post) {
     const article = document.createElement('article');
     article.className = 'post';
@@ -58,9 +47,7 @@ function renderPost(post) {
     postsEl.append(article);
 }
 
-/* ============================================================
-   GET
-   ============================================================ */
+//GET
 
 async function loadPosts() {
     clearMessage();
@@ -85,9 +72,7 @@ async function loadPosts() {
     }
 }
 
-/* ============================================================
-   POST
-   ============================================================ */
+//POST
 
 function validateCreate() {
     const title = titleInput.value.trim();
@@ -142,9 +127,7 @@ async function handleCreate(event) {
     }
 }
 
-/* ============================================================
-   Инициализация
-   ============================================================ */
+//Инициализация
 
 function init() {
     loadBtn.addEventListener('click', loadPosts);
